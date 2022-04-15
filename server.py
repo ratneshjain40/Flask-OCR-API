@@ -5,8 +5,10 @@ import numpy as np
 import cv2
 from imagereader import *
 import base64
+from flask_cors import CORS
 
 app = Flask(__name__)
+cors = CORS(app, resources={r"/*": {"origins": "*"}})
 api = Api(app)
 
 class ImageReader(Resource):
@@ -35,4 +37,3 @@ class ImageReader(Resource):
         return data
 
 api.add_resource(ImageReader, "/img_reader")
-app.run(port=5000, debug=True)

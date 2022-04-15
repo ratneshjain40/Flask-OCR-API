@@ -9,7 +9,6 @@ import spacy
 import pytesseract
 
 # ADD PATH HERE for Tesseract-OCR
-pytesseract.pytesseract.tesseract_cmd = os.path.abspath("Tesseract-OCR/tesseract.exe")
 
 def cleanText(txt):
     whitespace = string.whitespace
